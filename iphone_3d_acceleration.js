@@ -15,7 +15,7 @@ class iphone_3d_acceleration{
     }
   }
 
-  function do_action(){
+  do_action(){
     return 0;
   }
 }
