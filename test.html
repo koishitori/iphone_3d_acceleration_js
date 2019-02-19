@@ -24,14 +24,11 @@
       }
 
       do_action(){
+        document.getElementById("3d_status").innerHTML =  "x:" + this.rotX;
+        document.getElementById("3d_status").innerHTML += "y:" + this.rotY;
+        document.getElementById("3d_status").innerHTML += "z:" + this.rotZ;
         return 0;
       }
-    }
-    var 3D_acceleration = new iphone_3d_acceleration();
-    3D_acceleration.do_action = function(){
-      document.getElementById("3d_status").innerHTML =  "x:" + this.rotX;
-      document.getElementById("3d_status").innerHTML += "y:" + this.rotY;
-      document.getElementById("3d_status").innerHTML += "z:" + this.rotZ;
     }
   </script>
 </head>
