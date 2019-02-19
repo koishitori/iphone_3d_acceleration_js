@@ -6,21 +6,12 @@
   <script src="./iphone_3d_acceleration.js" charset="utf-8"></script>
 -->
   <script type="text/javascript">
-        var ua = navigator.userAgent;
-        window.addEventListener('devicemotion', function(event) {
-//        if(ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('iPod')  > -1){
-          	var gv = event.accelerationIncludingGravity;
-          	x = gv.x;
-          	y = gv.y;
-          	z = gv.z;
-          	this.rotX=Math.atan(x/z)/Math.PI*180;
-          	this.rotY=Math.atan(y/z)/Math.PI*180;
-          	this.rotZ=Math.atan(x/y)/Math.PI*180;
-            document.getElementById("3d_status").innerHTML =  "x:" + this.rotX;
-            document.getElementById("3d_status").innerHTML += "y:" + this.rotY;
-            document.getElementById("3d_status").innerHTML += "z:" + this.rotZ;
-          });
-//        }
+    var 3D_acceleration = new iphone_3d_acceleration();
+    3D_acceleration.do_action = function(){
+      document.getElementById("3d_status").innerHTML =  "x:" + this.rotX;
+      document.getElementById("3d_status").innerHTML += "y:" + this.rotY;
+      document.getElementById("3d_status").innerHTML += "z:" + this.rotZ;
+    }
   </script>
 </head>
 <body>

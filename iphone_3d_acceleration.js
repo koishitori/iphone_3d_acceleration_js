@@ -11,7 +11,7 @@ class iphone_3d_acceleration{
       	this.rotY=Math.atan(y/z)/Math.PI*180;
       	this.rotZ=Math.atan(x/y)/Math.PI*180;
         do_action();
-      });
+      }.bind(this));
     }
   }
 
