@@ -2,11 +2,14 @@
 <html>
 <head>
   <title>iPhone 3D Acceleration test</title>
+<!--
+  <script src="./iphone_3d_acceleration.js" charset="utf-8"></script>
+-->
   <script type="text/javascript">
     class iphone_3d_acceleration{
       constructor(){
         var ua = navigator.userAgent;
-        if(ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('iPod')  > -1){
+//        if(ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('iPod')  > -1){
           window.addEventListener('devicemotion', function(event) {
           	var gv = event.accelerationIncludingGravity;
           	x = gv.x;
@@ -17,14 +20,13 @@
           	this.rotZ=Math.atan(x/y)/Math.PI*180;
             do_action();
           });
-        }
+//        }
       }
 
-      function do_action(){
+      do_action(){
         return 0;
       }
     }
-    
     var 3D_acceleration = new iphone_3d_acceleration();
     3D_acceleration.do_action = function(){
       document.getElementById("3d_status").innerHTML =  "x:" + this.rotX;
