@@ -1,7 +1,7 @@
 class iphone_3d_acceleration{
   constructor(){
     var ua = navigator.userAgent;
-    if(ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('iPod')  > -1){
+//    if(ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('iPod')  > -1){
       window.addEventListener('devicemotion', function(event) {
       	var gv = event.accelerationIncludingGravity;
       	this.gx = gv.x;
@@ -13,7 +13,7 @@ class iphone_3d_acceleration{
         this.do_action();
       }.bind(this));
       document.getElementById("3d_status").innerHTML =  "init";
-    }
+//    }
   }
 
   do_action(){
