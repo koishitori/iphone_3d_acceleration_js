@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>iPhone 3D Acceleration test</title>
+  <meta name="viewport" content="width=480"/>
+  <style type="text/css" media="screen">
+    .face {
+        position: absolute;
+        top: 90px;
+        left: 360px;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        font-family: monospace;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .top {
+        top: 100px;
+        left: 100px;
+        background: #ff0000;
+        color: #999;
+        -webkit-transform: rotate(-45deg) skew(15deg, 15deg);
+        -moz-transform: rotate(-45deg) skew(15deg, 15deg);
+        -o-transform: rotate(-45deg) skew(15deg, 15deg);
+        -ms-transform: rotate(-45deg) skew(15deg, 15deg);
+        transform: rotate(-45deg) skew(15deg, 15deg);
+    }
+
+    .left {
+        top: 100px;
+        left: 100px;
+        background: #00ff00;
+        color: #333;
+        -webkit-transform: rotate(15deg) skew(15deg, 15deg);
+        -moz-transform: rotate(15deg) skew(15deg, 15deg);
+        -o-transform: rotate(15deg) skew(15deg, 15deg);
+        -ms-transform: rotate(15deg) skew(15deg, 15deg);
+        transform: rotate(15deg) skew(15deg, 15deg);
+    }
+
+    .right {
+        top: 100px;
+        left: 100px;
+        background: #0000ff;
+        color: #666;
+        -webkit-transform: rotate(-15deg) skew(-15deg, -15deg);
+        -moz-transform: rotate(-15deg) skew(-15deg, -15deg);
+        -o-transform: rotate(-15deg) skew(-15deg, -15deg);
+        -ms-transform: rotate(-15deg) skew(-15deg, -15deg);
+        transform: rotate(-15deg) skew(-15deg, -15deg);
+    }
+  </style>
+  <script src="./iphone_3d_acceleration.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var 3D_acceleration = new iphone_3d_acceleration();
+    3D_acceleration.do_action = function(){
+      document.getElementById("3d_status").innerHTML =  "x:" + this.rotX;
+      document.getElementById("3d_status").innerHTML += "y:" + this.rotY;
+      document.getElementById("3d_status").innerHTML += "z:" + this.rotZ;
+    }
+  </script>
+</head>
+<body>
+  <p id="3d_status"></p>
+</body>
+</html>
