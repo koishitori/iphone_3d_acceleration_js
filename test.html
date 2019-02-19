@@ -4,14 +4,14 @@
   <title>iPhone 3D Acceleration test</title>
   <script src="./iphone_3d_acceleration.js" charset="utf-8"></script>
   <script type="text/javascript">
-    var ua = navigator.userAgent;
-    document.getElementById("3d_status").innerHTML =  ua;
     var i3D_acceleration = new iphone_3d_acceleration();
     i3D_acceleration.do_action = function(){
       document.getElementById("3d_status").innerHTML =  "x:" + this.rotX;
       document.getElementById("3d_status").innerHTML += "y:" + this.rotY;
       document.getElementById("3d_status").innerHTML += "z:" + this.rotZ;
     }
+    var ua = navigator.userAgent;
+    document.getElementById("3d_status").innerHTML =  ua;
   </script>
 </head>
 <body>
