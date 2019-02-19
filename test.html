@@ -6,19 +6,8 @@
   <script src="./iphone_3d_acceleration.js" charset="utf-8"></script>
 -->
   <script type="text/javascript">
-        var ua = navigator.userAgent;
-//        if(ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('iPod')  > -1){
-          window.addEventListener('devicemotion', function(event) {
-          	var gv = event.accelerationIncludingGravity;
-          	x = gv.x;
-          	y = gv.y;
-          	z = gv.z;
-          	this.rotX=Math.atan(x/z)/Math.PI*180;
-          	this.rotY=Math.atan(y/z)/Math.PI*180;
-          	this.rotZ=Math.atan(x/y)/Math.PI*180;
-            document.getElementById("3d_status").innerHTML =  "x:" + this.rotX;
-            document.getElementById("3d_status").innerHTML += "y:" + this.rotY;
-            document.getElementById("3d_status").innerHTML += "z:" + this.rotZ;
+  window.addEventListener('devicemotion', function(event) {
+    alert("a");
           });
 //        }
   </script>
