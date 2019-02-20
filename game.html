@@ -14,8 +14,9 @@
     var gool=100;
     var comb=0;
     var max_comb=0;
-    var difficalty = 10;
+    var difficalty = 50;
     var max_x=0;
+    document.getElementById('difficalty_value').value = difficalty;
     setInterval(function(){
     	if(flag==1){
     		var canvas = document.getElementById('canvassample');
@@ -95,8 +96,8 @@
     		ctx.beginPath();
     		ctx.lineWidth = 2;
     		ctx.strokeStyle = '#0000ff';
-    		ctx.moveTo(gool+5, 130);
-    		ctx.lineTo(gool+5+difficalty, 130);
+    		ctx.moveTo(gool + 5, 130);
+    		ctx.lineTo(gool + 5 + ( difficalty - comb ), 130);
     		ctx.stroke();
     		ctx.beginPath();
     		ctx.moveTo(50, 130);
