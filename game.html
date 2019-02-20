@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>iPhone 3D Acceleration test</title>
+  <script src="./iphone_3d_acceleration.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    // 加速度を格納するための変数
+    var x = y = z = 1;
+    var temp_x,temp_y;
+    var v_x,v_y,ang;
+    var obj_x=50;
+    var obj_y=130;
+    var flag=0;
+    var gool=100;
+    var comb=0;
+    var max_comb=0;
+    var difficalty = 10;
+    var max_x=0;
+    setInterval(function(){
+    	if(flag==1){
+    		var canvas = document.getElementById('canvassample');
+    		var ctx = canvas.getContext('2d');
+    		ctx.beginPath();
+    		obj_x-=0.009*v_x;
+    		obj_y-=0.009*v_y;
+    		v_x*=0.996;
+    		v_y-=1;
+    		ctx.fillStyle = "#a6ff2d";
+    		ctx.arc(obj_x, obj_y, 2, 0, Math.PI*2, true);
+    		ctx.fill();
+    		document.getElementById('kekka').innerHTML="　";
+    		if(obj_y>130){
+    			flag=0;
+    			if(max_x<parseInt(obj_x-50)){
+    				max_x=parseInt(obj_x-50);
+    				document.getElementById('max_x_var').innerHTML="max length : "+max_x;
+    			}
+    			if(gool+5<obj_x&&obj_x<gool+5+difficalty){
+    				document.getElementById('kekka').innerHTML="OK";
+    				comb++;
+    				if(max_comb<comb)
+    					max_comb=comb;
+    			}else{
+    				document.getElementById('kekka').innerHTML="NG";
+    				comb=0;
+    			}
+    			document.getElementById("data").innerHTML="Comb : "+comb+"<br>\n Mac Comb : "+max_comb;
+    			gool=Math.floor( Math.random() * 200)+60 ;
+    		}
+    	}
+
+    },1);
+    window.addEventListener("touchend", function(e) {
+    	obj_x=50;
+    	obj_y=130;
+    	flag=1;
+    });
+    window.addEventListener("touchmove", function(e) {
+    	if(flag==0){
+    		e.preventDefault();
+    		var t = e.touches[0];
+    		v_x=temp_x-t.pageX;
+    		v_y=temp_y-t.pageY;
+    		temp_x=t.pageX;
+    		temp_y=t.pageY;
+    		var v=Math.sqrt(v_x*v_x+v_y*v_y);
+    		v_x=-v*Math.cos(ang);
+    		v_y=v*Math.sin(ang);
+    //		document.getElementById('data').innerHTML=v;
+    	}
+    });
+    function SetDifficalty(){
+    //	alert(document.getElementById('difficalty_value').value);
+    	var val=parseInt(document.getElementById('difficalty_value').value);
+            if(val)
+    		difficalty=val;
+    }
+    var i3D_acceleration = new iphone_3d_acceleration();
+    i3D_acceleration.init(
+      function(){
+        var canvas = document.getElementById('canvassample');
+    		var ctx = canvas.getContext('2d');
+    		var gv = event.accelerationIncludingGravity;
+    		x = gv.x;
+    		y = gv.y;
+    		z = gv.z;
+    		ctx.fillStyle = "#000000";
+    		ctx.fillRect(0, 0, 300, 160)
+    		ctx.beginPath();
+    			ctx.strokeStyle = '#ccccff';
+    			ctx.moveTo(5, 130);
+    			ctx.lineTo(295, 130);
+    			ctx.lineWidth = 1;
+    		ctx.stroke();
+    		ctx.beginPath();
+    		ctx.lineWidth = 2;
+    		ctx.strokeStyle = '#0000ff';
+    		ctx.moveTo(gool+5, 130);
+    		ctx.lineTo(gool+5+difficalty, 130);
+    		ctx.stroke();
+    		ctx.beginPath();
+    		ctx.moveTo(50, 130);
+    		ang=Math.atan(y/z);
+    		if(Math.sin(Math.atan(y/z))>0)
+    			ctx.lineTo(50+40*Math.cos(Math.atan(y/z)), 130-40*Math.sin(Math.atan(y/z)) );
+    		else
+    			ctx.lineTo(50-40*Math.cos(Math.atan(y/z)), 130+40*Math.sin(Math.atan(y/z)) );
+    		ctx.closePath();
+    		ctx.lineWidth = 1;
+    		ctx.strokeStyle = '#ff0000';
+    		ctx.stroke();
+    		if(obj_y<130){
+    			ctx.fillStyle = "#a6ff2d";
+    			ctx.arc(obj_x, obj_y, 2, 0, Math.PI*2, true);
+    			ctx.fill();
+    		}
+      });
+  </script>
+</head>
+<body ontouchmove="event.preventDefault()">
+  My best<br>Max Comb: 5 (gaol size)<br>max length : 456  <br><br>
+  If I have time, I'll make to 3D next step.<br>
+  <div id="data">Comb : 0<br>Max Comb : 0</div>
+  <div id="kekka">　</div><br>
+  <div id="max_x_var">max length : 0</div><br>
+  gool size <input type="text" id="difficalty_value" value="10">
+  <input type="button" onclick="SetDifficalty()">
+
+  <canvas id="canvassample" style="
+      position: absolute;
+      top: 340px;
+      left: 0px;
+      width: 480px;
+      height:240px;
+  "></canvas></body>
+</html>
