@@ -70,23 +70,31 @@
     i3D_acceleration.transform_cube = function( rotX, rotY, rotZ ){
 	    var matrix = new WebKitCSSMatrix();
       if(rotZ>0){
-//        document.getElementById('face_z2').style.visibility="hidden";
-//        document.getElementById('face_z1').style.visibility="visible";
+        document.getElementById('face_z2').style.visibility="hidden";
+        document.getElementById('face_z1').style.visibility="visible";
         document.getElementById('face_z1').style.WebkitTransform=matrix.rotate(rotY,rotX,0).translate(0,0,-100);
       }else{
-//        document.getElementById('face_z1').style.visibility="hidden";
-//        document.getElementById('face_z2').style.visibility="visible";
+        document.getElementById('face_z1').style.visibility="hidden";
+        document.getElementById('face_z2').style.visibility="visible";
         document.getElementById('face_z1').style.WebkitTransform=matrix.rotate(rotY,rotX,0).translate(0,0,100);
       }
       if(rotY>0){
-        document.getElementById('face_y').style.WebkitTransform=matrix.rotate(rotY-90, rotX, 0).translate(0, 0, 100);
+        document.getElementById('face_y2').style.visibility="hidden";
+        document.getElementById('face_y1').style.visibility="visible";
+        document.getElementById('face_y1').style.WebkitTransform=matrix.rotate(rotY-90, rotX, 0).translate(0, 0, 100);
       }else{
-        document.getElementById('face_y').style.WebkitTransform=matrix.rotate(rotY+90, rotX, 0).translate(0, 0, 100);
+        document.getElementById('face_y1').style.visibility="hidden";
+        document.getElementById('face_y2').style.visibility="visible";
+        document.getElementById('face_y2').style.WebkitTransform=matrix.rotate(rotY+90, rotX, 0).translate(0, 0, 100);
       }
       if(rotX>0){
-        document.getElementById('face_x').style.WebkitTransform=matrix.rotate(0,-90-rotX,0).rotate(0, 0, rotY).translate(0, 0, 100);
+        document.getElementById('face_x2').style.visibility="hidden";
+        document.getElementById('face_x1').style.visibility="visible";
+        document.getElementById('face_x1').style.WebkitTransform=matrix.rotate(0,-90-rotX,0).rotate(0, 0, rotY).translate(0, 0, 100);
       }else{
-        document.getElementById('face_x').style.WebkitTransform=matrix.rotate(0,90+rotX,0).rotate(0, 0, rotY).translate(0, 0, 100);
+        document.getElementById('face_x1').style.visibility="hidden";
+        document.getElementById('face_x2').style.visibility="visible";
+        document.getElementById('face_x2').style.WebkitTransform=matrix.rotate(0,90+rotX,0).rotate(0, 0, rotY).translate(0, 0, 100);
       }
     };
     i3D_acceleration.init(
@@ -110,10 +118,11 @@
   <div class="face z"
 id="face_z1"><a href="test.html">z1</a>
   </div>
-  <div class="face x" id="face_x2"><a href="test.html">x2</a>
+  <div class="face x" id="face_x2" style="visibility: hidden"><a href="test.html">x2</a>
   </div>
- <div class="face y" id="face_y2"><a href="about.html">y2</a>
-  </div>  <div class="face z" id="face_z2" style="visibility: hidden"><a href="secret.html">z2</a>
+  <div class="face y" id="face_y2" style="visibility: hidden"><a href="about.html">y2</a>
+  </div>
+  <div class="face z" id="face_z2" style="visibility: hidden"><a href="secret.html">z2</a>
   </div>
 </body>
 </html>
