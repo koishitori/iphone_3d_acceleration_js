@@ -6,9 +6,10 @@
   <script type="text/javascript">
     var i3D_acceleration = new iphone_3d_acceleration(
       function(){
-        document.getElementById("3d_status").innerHTML =  "x:" + this.gx;
-        document.getElementById("3d_status").innerHTML += "y:" + this.gy;
-        document.getElementById("3d_status").innerHTML += "z:" + this.gz;
+        document.getElementById("3d_status").innerHTML =  "x : " + this.gx + "<br/>";
+        document.getElementById("3d_status").innerHTML += "y : " + this.gy + "<br/>";
+        document.getElementById("3d_status").innerHTML += "z : " + this.gz + "<br/>";
+        document.getElementById("3d_status").innerHTML += "count : " + this.count;
       });
   </script>
 </head>
