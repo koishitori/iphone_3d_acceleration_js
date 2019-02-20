@@ -51,10 +51,12 @@
     			}
     			if(gool+5<obj_x&&obj_x<gool+5+difficalty){
     				document.getElementById('kekka').innerHTML="OK";
+            document.getElementById('kekka').className="kekka OK";
     				comb++;
     				if(max_comb<comb)
     					max_comb=comb;
     			}else{
+            document.getElementById('kekka').className="kekka NG";
     				document.getElementById('kekka').innerHTML="NG";
     				comb=0;
     			}
