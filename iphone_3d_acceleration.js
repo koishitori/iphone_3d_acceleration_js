@@ -8,9 +8,6 @@ class iphone_3d_acceleration{
       	this.gx = gv.x;
       	this.gy = gv.y;
       	this.gz = gv.z;
-      	this.rotX=Math.atan(this.gx/this.gz)/Math.PI*180;
-      	this.rotY=Math.atan(this.gy/this.gz)/Math.PI*180;
-      	this.rotZ=Math.atan(this.gx/this.gy)/Math.PI*180;
         this.do_action();
       }.bind(this));
 //    }
