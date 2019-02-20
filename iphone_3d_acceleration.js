@@ -1,5 +1,5 @@
 class iphone_3d_acceleration{
-  constructor(func){
+  init(func){
     var ua = navigator.userAgent;
 //    if(ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('iPod')  > -1){
       this.do_action = function(){func();};
