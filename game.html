@@ -2,6 +2,19 @@
 <html>
 <head>
   <meta name="viewport" content="width=480,initial-scale=1">
+  <style type="text/css" media="screen">
+    .kekka {
+      font-size: xx-large;
+    }
+
+    .OK {
+      color: green;
+    }
+
+    .NG {
+      color: red;
+    }
+  </style>
   <title>iPhone 3D Acceleration test</title>
   <script src="./iphone_3d_acceleration.js" charset="utf-8"></script>
   <script type="text/javascript">
@@ -125,7 +138,7 @@
   My best<br>Max Comb: 5 (gaol size)<br>max length : 456  <br><br>
   If I have time, I'll make to 3D next step.<br>
   <div id="data">Comb : 0<br>Max Comb : 0</div>
-  <div id="kekka">　</div><br>
+  結果:<div class="kekka"id="kekka">　</div><br>
   <div id="max_x_var">max length : 0</div><br>
   gool size <input type="text" id="difficalty_value" value="10">
   <input type="button" onclick="SetDifficalty()">
