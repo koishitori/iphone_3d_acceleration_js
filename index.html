@@ -68,6 +68,7 @@
   <script type="text/javascript">
     var i3D_acceleration = new iphone_3d_acceleration();
     i3D_acceleration.transform_cube = function( rotX, rotY, rotZ ){
+      docment.getElementById("3d_status").innerHTML = "x :" + rotX + ", y : " + rotY + ", z : " + rotZ;
 	    var matrix = new WebKitCSSMatrix();
       if(rotZ>0){
         document.getElementById('face_z2').style.visibility="hidden";
@@ -110,7 +111,7 @@
   </script>
 </head>
 <body>
-  <h1>旧ひらのんこむ</h1><br/><br/>
+  <h1>旧ひらのんこむ</h1><p id="3d_status"></p><br/><br/>
   <div class="face x" id="face_x1"><a href="test.html">x1</a>
   </div>
  <div class="face y" id="face_y1"><a href="about.html">y1</a>
