@@ -8,6 +8,7 @@ class iphone_3d_acceleration{
       	this.gx = gv.x;
       	this.gy = gv.y;
       	this.gz = gv.z;
+        this.count = 0;
         this.do_action();
       }.bind(this));
 //    }
