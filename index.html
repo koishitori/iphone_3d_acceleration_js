@@ -70,13 +70,13 @@
     i3D_acceleration.transform_cube = function( rotX, rotY, rotZ ){
 	    var matrix = new WebKitCSSMatrix();
       if(rotZ>0){
-        document.getElementById('face_z2').style.visibility="hidden";
-        document.getElementById('face_z1').style.visibility="visible";
+//        document.getElementById('face_z2').style.visibility="hidden";
+//        document.getElementById('face_z1').style.visibility="visible";
         document.getElementById('face_z1').style.WebkitTransform=matrix.rotate(rotY,rotX,0).translate(0,0,-100);
       }else{
-        document.getElementById('face_z1').style.visibility="hidden";
-        document.getElementById('face_z2').style.visibility="visible";
-        document.getElementById('face_z2').style.WebkitTransform=matrix.rotate(rotY,rotX,0).translate(0,0,100);
+//        document.getElementById('face_z1').style.visibility="hidden";
+//        document.getElementById('face_z2').style.visibility="visible";
+        document.getElementById('face_z1').style.WebkitTransform=matrix.rotate(rotY,rotX,0).translate(0,0,100);
       }
       if(rotY>0){
         document.getElementById('face_y').style.WebkitTransform=matrix.rotate(rotY-90, rotX, 0).translate(0, 0, 100);
