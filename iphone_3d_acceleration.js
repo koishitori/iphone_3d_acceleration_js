@@ -2,7 +2,7 @@ class iphone_3d_acceleration{
   constructor(func){
     var ua = navigator.userAgent;
 //    if(ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('iPod')  > -1){
-      this.do_action = func();
+      this.do_action = function(){func();};
       window.addEventListener('devicemotion', function(event) {
       	var gv = event.accelerationIncludingGravity;
       	this.gx = gv.x;
