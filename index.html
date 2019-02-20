@@ -67,32 +67,37 @@
   <script src="./iphone_3d_acceleration.js" charset="utf-8"></script>
   <script type="text/javascript">
     var i3D_acceleration = new iphone_3d_acceleration();
-    i3D_acceleration.init(
-      function(){
-        var matrix = new WebKitCSSMatrix();
-        var rotX = Math.asin( i3D_acceleration.gx / -9.8 ) / Math.PI * 180; //Math.atan(i3D_acceleration.gx/i3D_acceleration.gz)/Math.PI*180;
-      	var rotY = Math.asin( i3D_acceleration.gy / -9.8 ) / Math.PI * 180; //Math.atan(i3D_acceleration.gy/i3D_acceleration.gz)/Math.PI*180;
-      	var rotZ = Math.asin( i3D_acceleration.gz / 9.8 ) / Math.PI * 180; //Math.atan(i3D_acceleration.gx/i3D_acceleration.gy)/Math.PI*180;
-        if(i3D_acceleration.gz<0){
-      		document.getElementById('face_z2').style.visibility="hidden";
-      		document.getElementById('face_z1').style.visibility="visible";
-      		document.getElementById('face_z1').style.WebkitTransform=matrix.rotate(rotY,rotX,0).translate(0,0,-100);
-      	}else{
-      		document.getElementById('face_z1').style.visibility="hidden";
-      		document.getElementById('face_z2').style.visibility="visible";
-      		document.getElementById('face_z2').style.WebkitTransform=matrix.rotate(rotY,rotX,0).translate(0,0,100);
-      	}
-      	if(i3D_acceleration.gy>0){
-      		document.getElementById('face_y').style.WebkitTransform=matrix.rotate(rotY-90, rotX, 0).translate(0, 0, 100);
-      	}else{
-      		document.getElementById('face_y').style.WebkitTransform=matrix.rotate(rotY+90, rotX, 0).translate(0, 0, 100);
-      	}
-      	if(i3D_acceleration.gx>0){
-      		document.getElementById('face_x').style.WebkitTransform=matrix.rotate(0,-90-rotX,0).rotate(0, 0, rotY).translate(0, 0, 100);
-      	}else{
-      		document.getElementById('face_x').style.WebkitTransform=matrix.rotate(0,90+rotX,0).rotate(0, 0, rotY).translate(0, 0, 100);
-      	}
-      });
+    i3D_acceleration.transform_cube = function( rotX, rotY, rotZ ){
+      if(i3D_acceleration.gz<0){
+        document.getElementById('face_z2').style.visibility="hidden";
+        document.getElementById('face_z1').style.visibility="visible";
+        document.getElementById('face_z1').style.WebkitTransform=matrix.rotate(rotY,rotX,0).translate(0,0,-100);
+      }else{
+        document.getElementById('face_z1').style.visibility="hidden";
+        document.getElementById('face_z2').style.visibility="visible";
+        document.getElementById('face_z2').style.WebkitTransform=matrix.rotate(rotY,rotX,0).translate(0,0,100);
+      }
+      if(i3D_acceleration.gy>0){
+        document.getElementById('face_y').style.WebkitTransform=matrix.rotate(rotY-90, rotX, 0).translate(0, 0, 100);
+      }else{
+        document.getElementById('face_y').style.WebkitTransform=matrix.rotate(rotY+90, rotX, 0).translate(0, 0, 100);
+      }
+      if(i3D_acceleration.gx>0){
+        document.getElementById('face_x').style.WebkitTransform=matrix.rotate(0,-90-rotX,0).rotate(0, 0, rotY).translate(0, 0, 100);
+      }else{
+        document.getElementById('face_x').style.WebkitTransform=matrix.rotate(0,90+rotX,0).rotate(0, 0, rotY).translate(0, 0, 100);
+      }
+      i3D_acceleration.init(
+        function(){
+          var matrix = new WebKitCSSMatrix();
+          i3D_acceleration.transform_cube(
+            var rotX = Math.asin( i3D_acceleration.gx / 9.8 ) / Math.PI * 180, //Math.atan(i3D_acceleration.gx/i3D_acceleration.gz)/Math.PI*180;
+        	  var rotY = Math.asin( i3D_acceleration.gy / 9.8 ) / Math.PI * 180, //Math.atan(i3D_acceleration.gy/i3D_acceleration.gz)/Math.PI*180;
+        	  var rotZ = Math.asin( i3D_acceleration.gz / 9.8 ) / Math.PI * 180, //Math.atan(i3D_acceleration.gx/i3D_acceleration.gy)/Math.PI*180;
+          );
+        }
+      );
+    }
   </script>
 </head>
 <body>
