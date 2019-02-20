@@ -88,9 +88,9 @@
       		document.getElementById('face_y').style.WebkitTransform=matrix.rotate(rotY-90, rotX, 0).translate(0, 0, 100);
       	}
       	if(i3D_acceleration.gx>0){
-      		document.getElementById('face_x').style.WebkitTransform=matrix.rotate(0,-90-rotX,0).rotate(0, 0, rotY).translate(0, 0, 100);
+      		document.getElementById('face_x').style.WebkitTransform=matrix.rotate(0,-90-rotX,0).rotate(0, 0, -rotY).translate(0, 0, 100);
       	}else{
-      		document.getElementById('face_x').style.WebkitTransform=matrix.rotate(0,90+rotX,0).rotate(0, 0, rotY).translate(0, 0, 100);
+      		document.getElementById('face_x').style.WebkitTransform=matrix.rotate(0,90+rotX,0).rotate(0, 0, -rotY).translate(0, 0, 100);
       	}
       });
   </script>
