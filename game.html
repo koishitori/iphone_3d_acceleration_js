@@ -16,7 +16,6 @@
     var max_comb=0;
     var difficalty = 50;
     var max_x=0;
-    document.getElementById('difficalty_value').value = difficalty;
     setInterval(function(){
     	if(flag==1){
     		var canvas = document.getElementById('canvassample');
@@ -74,7 +73,7 @@
     //	alert(document.getElementById('difficalty_value').value);
     	var val=parseInt(document.getElementById('difficalty_value').value);
             if(val)
-    		difficalty=val;
+    		difficalty = val;
     }
     var i3D_acceleration = new iphone_3d_acceleration();
     i3D_acceleration.init(
@@ -116,6 +115,7 @@
     			ctx.fill();
     		}
       });
+      document.getElementById('difficalty_value').value = difficalty;
   </script>
 </head>
 <body ontouchmove="event.preventDefault()">
