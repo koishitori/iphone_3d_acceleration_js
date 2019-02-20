@@ -88,7 +88,7 @@
         document.getElementById('face_y2').style.visibility="visible";
         document.getElementById('face_y2').style.WebkitTransform=matrix.rotate(rotX+90, rotY, 0).translate(0, 0, 100);
       }
-      if(rotX > 0){
+      if(rotX < 0){
         document.getElementById('face_x2').style.visibility="hidden";
         document.getElementById('face_x1').style.visibility="visible";
         document.getElementById('face_x1').style.WebkitTransform=matrix.rotate(0,-90-rotY,0).rotate(0, 0, rotX).translate(0, 0, 100);
