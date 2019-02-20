@@ -69,7 +69,7 @@
     var i3D_acceleration = new iphone_3d_acceleration();
     i3D_acceleration.transform_cube = function( rotX, rotY, rotZ ){
 	    var matrix = new WebKitCSSMatrix();
-      if(irotZ<0){
+      if(rotZ<0){
         document.getElementById('face_z2').style.visibility="hidden";
         document.getElementById('face_z1').style.visibility="visible";
         document.getElementById('face_z1').style.WebkitTransform=matrix.rotate(rotY,rotX,0).translate(0,0,-100);
