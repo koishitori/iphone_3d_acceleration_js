@@ -115,7 +115,9 @@
     			ctx.fill();
     		}
       });
-      document.getElementById('difficalty_value').value = difficalty;
+      window.onload = function () {
+        document.getElementById('difficalty_value').value = difficalty;
+      };
   </script>
 </head>
 <body ontouchmove="event.preventDefault()">
