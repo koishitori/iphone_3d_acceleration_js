@@ -7,9 +7,15 @@
     var i3D_acceleration = new iphone_3d_acceleration();
     i3D_acceleration.init(
       function(){
+        var rotX=Math.atan(i3D_acceleration.gx/i3D_acceleration.gz)/Math.PI*180;
+      	var rotY=Math.atan(i3D_acceleration.gy/i3D_acceleration.gz)/Math.PI*180;
+      	var rotZ=Math.atan(i3D_acceleration.gx/i3D_acceleration.gy)/Math.PI*180;
         document.getElementById("3d_status").innerHTML =  "x : " + i3D_acceleration.gx + "<br/>";
         document.getElementById("3d_status").innerHTML += "y : " + i3D_acceleration.gy + "<br/>";
         document.getElementById("3d_status").innerHTML += "z : " + i3D_acceleration.gz + "<br/>";
+        document.getElementById("3d_status").innerHTML += "rotX : " + rotX + "<br/>";
+        document.getElementById("3d_status").innerHTML += "rotY : " + rotY + "<br/>";
+        document.getElementById("3d_status").innerHTML += "rotZ : " + rotZ + "<br/>";
       });
   </script>
 </head>
