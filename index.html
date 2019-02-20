@@ -68,7 +68,7 @@
   <script type="text/javascript">
     var i3D_acceleration = new iphone_3d_acceleration();
     i3D_acceleration.transform_cube = function( rotX, rotY, rotZ ){
-      docment.getElementById("3d_status").innerHTML = "x :" + rotX + ", y : " + rotY + ", z : " + rotZ;
+      document.getElementById("3d_status").innerHTML = "x :" + rotX + ", y : " + rotY + ", z : " + rotZ;
 	    var matrix = new WebKitCSSMatrix();
       if(rotZ>0){
         document.getElementById('face_z2').style.visibility="hidden";
