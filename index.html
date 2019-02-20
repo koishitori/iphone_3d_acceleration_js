@@ -74,12 +74,12 @@
       	var rotY = Math.asin(i3D_acceleration.gy/9.8)/Math.PI*180; //Math.atan(i3D_acceleration.gy/i3D_acceleration.gz)/Math.PI*180;
       	var rotZ = Math.asin(i3D_acceleration.gz/9.8)/Math.PI*180; //Math.atan(i3D_acceleration.gx/i3D_acceleration.gy)/Math.PI*180;
         if(i3D_acceleration.gz<0){
-      		document.getElementById('face_z2').style.visibility="hidden";
-      		document.getElementById('face_z1').style.visibility="visible";
-      		document.getElementById('face_z1').style.WebkitTransform=matrix.rotate(rotY,rotX,0).translate(0,0,-100);
-      	}else{
       		document.getElementById('face_z1').style.visibility="hidden";
       		document.getElementById('face_z2').style.visibility="visible";
+      		document.getElementById('face_z1').style.WebkitTransform=matrix.rotate(rotY,rotX,0).translate(0,0,-100);
+      	}else{
+      		document.getElementById('face_z2').style.visibility="hidden";
+      		document.getElementById('face_z1').style.visibility="visible";
       		document.getElementById('face_z2').style.WebkitTransform=matrix.rotate(rotY,rotX,0).translate(0,0,100);
       	}
       	if(i3D_acceleration.gy>0){
