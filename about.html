@@ -10,12 +10,18 @@
         var rotX=Math.atan(i3D_acceleration.gx/i3D_acceleration.gz)/Math.PI*180;
       	var rotY=Math.atan(i3D_acceleration.gy/i3D_acceleration.gz)/Math.PI*180;
       	var rotZ=Math.atan(i3D_acceleration.gx/i3D_acceleration.gy)/Math.PI*180;
+        var rotX2=Math.asin(i3D_acceleration.gx/9.8)/Math.PI*180;
+      	var rotY2=Math.asin(i3D_acceleration.gy/9.8)/Math.PI*180;
+      	var rotZ2=Math.asin(i3D_acceleration.gz/9.8)/Math.PI*180;
         document.getElementById("3d_status").innerHTML =  "x : " + i3D_acceleration.gx + "<br/>";
         document.getElementById("3d_status").innerHTML += "y : " + i3D_acceleration.gy + "<br/>";
         document.getElementById("3d_status").innerHTML += "z : " + i3D_acceleration.gz + "<br/>";
         document.getElementById("3d_status").innerHTML += "rotX : " + rotX + "<br/>";
         document.getElementById("3d_status").innerHTML += "rotY : " + rotY + "<br/>";
         document.getElementById("3d_status").innerHTML += "rotZ : " + rotZ + "<br/>";
+        document.getElementById("3d_status").innerHTML += "rotX2 : " + rotX2 + "<br/>";
+        document.getElementById("3d_status").innerHTML += "rotY2 : " + rotY2 + "<br/>";
+        document.getElementById("3d_status").innerHTML += "rotZ2 : " + rotZ2 + "<br/>";
       });
   </script>
 </head>
