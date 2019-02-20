@@ -13,7 +13,6 @@ class iphone_3d_acceleration{
       	this.rotZ=Math.atan(this.gx/this.gy)/Math.PI*180;
         this.do_action();
       }.bind(this));
-      document.getElementById("3d_status").innerHTML =  "init";
 //    }
   }
 
